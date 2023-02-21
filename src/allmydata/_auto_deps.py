@@ -20,16 +20,16 @@ install_requires = [
     # need pkg_resources . We use >=11.3 here because that's what
     # "cryptography" requires (which is a sub-dependency of TLS-using
     # packages), so there's no point in requiring less.
-    "setuptools >= 11.3",
+    "setuptools == 11.3",
 
-    "zfec >= 1.1.0",
+    "zfec == 1.1.0",
 
     # Feisty has simplejson 1.4
-    "simplejson >= 1.4",
+    "simplejson == 1.4",
 
     # zope.interface >= 3.6.0 is required for Twisted >= 12.1.0.
     # zope.interface 3.6.3 and 3.6.4 are incompatible with Nevow (#1435).
-    "zope.interface >= 3.6.0, != 3.6.3, != 3.6.4",
+    "zope.interface == 3.6.0, != 3.6.3, != 3.6.4",
 
     # * foolscap < 0.5.1 had a performance bug which spent O(N**2) CPU for
     #   transferring large mutable files of size N.
@@ -39,12 +39,12 @@ install_requires = [
     # * foolscap 0.8.0 generates 2048-bit RSA-with-SHA-256 signatures,
     #   rather than 1024-bit RSA-with-MD5. This also allows us to work
     #   with a FIPS build of OpenSSL.
-    "foolscap >= 0.10.1",
+    "foolscap == 0.11.0",
 
     # Needed for SFTP.
     # pycrypto 2.2 doesn't work due to <https://bugs.launchpad.net/pycrypto/+bug/620253>
     # pycrypto 2.4 doesn't work due to <https://bugs.launchpad.net/pycrypto/+bug/881130>
-    "pycrypto >= 2.1.0, != 2.2, != 2.4",
+    "pycrypto == 2.1.0, != 2.2, != 2.4",
 
     # pycryptopp-0.6.0 includes ed25519
     "pycryptopp >= 0.6.0",
@@ -74,10 +74,10 @@ install_requires = [
     #   13.0.0 yet, so if this is inconvenient, feel free to downgrade this
     #   dependency to "Twisted >= 13.0.0" as long as your OS package declares
     #   a dependency on everything that Twisted needs to provide TLS support.
-    "Twisted[tls] >= 15.1.0",
+    "Twisted[tls] == 16.0.0",
 
     # We need Nevow >= 0.11.1 which can be installed using pip.
-    "Nevow >= 0.11.1",
+    "Nevow == 0.11.1",
 
     # * pyOpenSSL is required in order for foolscap to provide secure connections.
     #   Since foolscap doesn't reliably declare this dependency in a machine-readable
@@ -88,7 +88,7 @@ install_requires = [
     #   version of OpenSSL that pyOpenSSL is using.
     # * pyOpenSSL >= 0.14 is needed in order to avoid
     #   <https://tahoe-lafs.org/trac/tahoe-lafs/ticket/2474>.
-    "pyOpenSSL >= 0.14",
+    "pyOpenSSL == 19.1.0",
 
     # needed for cloud backend
     "txAWS == 0.2.1.post5",
