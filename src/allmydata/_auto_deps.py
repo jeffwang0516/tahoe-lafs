@@ -77,7 +77,7 @@ install_requires = [
     "Twisted[tls] == 16.0.0",
 
     # We need Nevow >= 0.11.1 which can be installed using pip.
-    "Nevow == 0.11.1",
+    "Nevow == 0.14.4",
 
     # * pyOpenSSL is required in order for foolscap to provide secure connections.
     #   Since foolscap doesn't reliably declare this dependency in a machine-readable
